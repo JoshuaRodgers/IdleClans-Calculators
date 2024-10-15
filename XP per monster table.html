@@ -1,0 +1,483 @@
+<!-- Monster XP Table -->
+<style>
+  /* Scoped Styling for Monster XP Table */
+  .custom-monster-table-container {
+    width: 100%;
+    overflow-x: auto;
+    font-family: Arial, sans-serif;
+    margin: 20px 0;
+    user-select: none; /* Prevent text selection */
+  }
+
+  .custom-monster-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e; /* Dark background */
+    color: #e0e0e0; /* Light text */
+    font-size: 14px; /* Smaller font size */
+  }
+
+  .custom-monster-table th, .custom-monster-table td {
+    padding: 8px 10px; /* Reduced padding */
+    text-align: center;
+    border: 1px solid #333;
+  }
+
+  .custom-monster-table thead {
+    background-color: #333;
+    color: #fff;
+  }
+
+  .custom-monster-table .section-header {
+    background-color: #2a2a2a;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+    color: #ffffff;
+  }
+
+  .custom-monster-table tbody tr:nth-child(even) {
+    background-color: #2a2a2a;
+  }
+
+  .custom-monster-table tbody tr:hover {
+    background-color: #444;
+  }
+
+  /* Responsive Adjustments */
+  @media screen and (max-width: 768px) {
+    .custom-monster-table th, .custom-monster-table td {
+      padding: 6px 8px;
+      font-size: 12px;
+    }
+  }
+</style>
+
+<div class="custom-monster-table-container">
+  <table class="custom-monster-table">
+    <thead>
+      <tr>
+        <th>Monster Name</th>
+        <th>HP XP</th>
+        <th>Combat XP (Total)</th>
+        <th>Combat XP per Skill</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Woods Section -->
+      <tr class="section-header">
+        <td colspan="4">Woods</td>
+      </tr>
+      <!-- Turkey -->
+      <tr>
+        <td>Turkey</td>
+        <td>4</td>
+        <td>5.32</td>
+        <td>
+          Attack: 1.77 XP<br>
+          Strength: 1.77 XP<br>
+          Defence: 1.77 XP
+        </td>
+      </tr>
+      <!-- Fox -->
+      <tr>
+        <td>Fox</td>
+        <td>6</td>
+        <td>7.98</td>
+        <td>
+          Attack: 2.66 XP<br>
+          Strength: 2.66 XP<br>
+          Defence: 2.66 XP
+        </td>
+      </tr>
+      <!-- Wolf -->
+      <tr>
+        <td>Wolf</td>
+        <td>8</td>
+        <td>10.64</td>
+        <td>
+          Attack: 3.55 XP<br>
+          Strength: 3.55 XP<br>
+          Defence: 3.55 XP
+        </td>
+      </tr>
+      <!-- Boar -->
+      <tr>
+        <td>Boar</td>
+        <td>10</td>
+        <td>13.3</td>
+        <td>
+          Attack: 4.43 XP<br>
+          Strength: 4.43 XP<br>
+          Defence: 4.43 XP
+        </td>
+      </tr>
+      <!-- Bear -->
+      <tr>
+        <td>Bear</td>
+        <td>14</td>
+        <td>18.62</td>
+        <td>
+          Attack: 6.21 XP<br>
+          Strength: 6.21 XP<br>
+          Defence: 6.21 XP
+        </td>
+      </tr>
+
+      <!-- Cave Section -->
+      <tr class="section-header">
+        <td colspan="4">Cave</td>
+      </tr>
+      <!-- Scorpion -->
+      <tr>
+        <td>Scorpion</td>
+        <td>16</td>
+        <td>21.28</td>
+        <td>
+          Attack: 7.09 XP<br>
+          Strength: 7.09 XP<br>
+          Defence: 7.09 XP
+        </td>
+      </tr>
+      <!-- Snake -->
+      <tr>
+        <td>Snake</td>
+        <td>18</td>
+        <td>23.94</td>
+        <td>
+          Attack: 7.98 XP<br>
+          Strength: 7.98 XP<br>
+          Defence: 7.98 XP
+        </td>
+      </tr>
+      <!-- Crocodile -->
+      <tr>
+        <td>Crocodile</td>
+        <td>20</td>
+        <td>26.6</td>
+        <td>
+          Attack: 8.87 XP<br>
+          Strength: 8.87 XP<br>
+          Defence: 8.87 XP
+        </td>
+      </tr>
+      <!-- Goblin -->
+      <tr>
+        <td>Goblin</td>
+        <td>22</td>
+        <td>29.26</td>
+        <td>
+          Attack: 9.75 XP<br>
+          Strength: 9.75 XP<br>
+          Defence: 9.75 XP
+        </td>
+      </tr>
+      <!-- Cave Dweller -->
+      <tr>
+        <td>Cave Dweller</td>
+        <td>25</td>
+        <td>33.25</td>
+        <td>
+          Attack: 11.08 XP<br>
+          Strength: 11.08 XP<br>
+          Defence: 11.08 XP
+        </td>
+      </tr>
+      <!-- Orange Dragon -->
+      <tr>
+        <td>Orange Dragon</td>
+        <td>30</td>
+        <td>39.9</td>
+        <td>
+          Attack: 13.3 XP<br>
+          Strength: 13.3 XP<br>
+          Defence: 13.3 XP
+        </td>
+      </tr>
+
+      <!-- Wilderness Section -->
+      <tr class="section-header">
+        <td colspan="4">Wilderness</td>
+      </tr>
+      <!-- Troll -->
+      <tr>
+        <td>Troll</td>
+        <td>32</td>
+        <td>42.56</td>
+        <td>
+          Attack: 14.19 XP<br>
+          Strength: 14.19 XP<br>
+          Defence: 14.19 XP
+        </td>
+      </tr>
+      <!-- Wandering Warrior -->
+      <tr>
+        <td>Wandering Warrior</td>
+        <td>34</td>
+        <td>45.22</td>
+        <td>
+          Attack: 15.07 XP<br>
+          Strength: 15.07 XP<br>
+          Defence: 15.07 XP
+        </td>
+      </tr>
+      <!-- Druid -->
+      <tr>
+        <td>Druid</td>
+        <td>36</td>
+        <td>47.88</td>
+        <td>
+          Attack: 15.96 XP<br>
+          Strength: 15.96 XP<br>
+          Defence: 15.96 XP
+        </td>
+      </tr>
+      <!-- Gorilla -->
+      <tr>
+        <td>Gorilla</td>
+        <td>38</td>
+        <td>50.54</td>
+        <td>
+          Attack: 16.85 XP<br>
+          Strength: 16.85 XP<br>
+          Defence: 16.85 XP
+        </td>
+      </tr>
+      <!-- Giant -->
+      <tr>
+        <td>Giant</td>
+        <td>40</td>
+        <td>53.2</td>
+        <td>
+          Attack: 17.73 XP<br>
+          Strength: 17.73 XP<br>
+          Defence: 17.73 XP
+        </td>
+      </tr>
+      <!-- Green Dragon -->
+      <tr>
+        <td>Green Dragon</td>
+        <td>44</td>
+        <td>58.52</td>
+        <td>
+          Attack: 19.51 XP<br>
+          Strength: 19.51 XP<br>
+          Defence: 19.51 XP
+        </td>
+      </tr>
+
+      <!-- Haunted Graveyard Section -->
+      <tr class="section-header">
+        <td colspan="4">Haunted Graveyard</td>
+      </tr>
+      <!-- Ghost -->
+      <tr>
+        <td>Ghost</td>
+        <td>46</td>
+        <td>61.18</td>
+        <td>
+          Attack: 20.39 XP<br>
+          Strength: 20.39 XP<br>
+          Defence: 20.39 XP
+        </td>
+      </tr>
+      <!-- Zombie -->
+      <tr>
+        <td>Zombie</td>
+        <td>48</td>
+        <td>63.84</td>
+        <td>
+          Attack: 21.28 XP<br>
+          Strength: 21.28 XP<br>
+          Defence: 21.28 XP
+        </td>
+      </tr>
+      <!-- Possessed Bear -->
+      <tr>
+        <td>Possessed Bear</td>
+        <td>50</td>
+        <td>66.5</td>
+        <td>
+          Attack: 22.17 XP<br>
+          Strength: 22.17 XP<br>
+          Defence: 22.17 XP
+        </td>
+      </tr>
+      <!-- Witch -->
+      <tr>
+        <td>Witch</td>
+        <td>52</td>
+        <td>69.16</td>
+        <td>
+          Attack: 23.05 XP<br>
+          Strength: 23.05 XP<br>
+          Defence: 23.05 XP
+        </td>
+      </tr>
+      <!-- Demon -->
+      <tr>
+        <td>Demon</td>
+        <td>54</td>
+        <td>71.82</td>
+        <td>
+          Attack: 23.94 XP<br>
+          Strength: 23.94 XP<br>
+          Defence: 23.94 XP
+        </td>
+      </tr>
+      <!-- Red Dragon -->
+      <tr>
+        <td>Red Dragon</td>
+        <td>56</td>
+        <td>74.48</td>
+        <td>
+          Attack: 24.83 XP<br>
+          Strength: 24.83 XP<br>
+          Defence: 24.83 XP
+        </td>
+      </tr>
+
+      <!-- Uncharted Grounds Section -->
+      <tr class="section-header">
+        <td colspan="4">Uncharted Grounds</td>
+      </tr>
+      <!-- Mad Wizard -->
+      <tr>
+        <td>Mad Wizard</td>
+        <td>60</td>
+        <td>79.8</td>
+        <td>
+          Attack: 26.6 XP<br>
+          Strength: 26.6 XP<br>
+          Defence: 26.6 XP
+        </td>
+      </tr>
+      <!-- Vampire -->
+      <tr>
+        <td>Vampire</td>
+        <td>65</td>
+        <td>86.45</td>
+        <td>
+          Attack: 28.82 XP<br>
+          Strength: 28.82 XP<br>
+          Defence: 28.82 XP
+        </td>
+      </tr>
+      <!-- Werewolf -->
+      <tr>
+        <td>Werewolf</td>
+        <td>70</td>
+        <td>93.1</td>
+        <td>
+          Attack: 31.03 XP<br>
+          Strength: 31.03 XP<br>
+          Defence: 31.03 XP
+        </td>
+      </tr>
+      <!-- Dark Wizard -->
+      <tr>
+        <td>Dark Wizard</td>
+        <td>75</td>
+        <td>99.75</td>
+        <td>
+          Attack: 33.25 XP<br>
+          Strength: 33.25 XP<br>
+          Defence: 33.25 XP
+        </td>
+      </tr>
+      <!-- Cerberus -->
+      <tr>
+        <td>Cerberus</td>
+        <td>80</td>
+        <td>106.4</td>
+        <td>
+          Attack: 35.47 XP<br>
+          Strength: 35.47 XP<br>
+          Defence: 35.47 XP
+        </td>
+      </tr>
+      <!-- Black Dragon -->
+      <tr>
+        <td>Black Dragon</td>
+        <td>90</td>
+        <td>119.7</td>
+        <td>
+          Attack: 39.9 XP<br>
+          Strength: 39.9 XP<br>
+          Defence: 39.9 XP
+        </td>
+      </tr>
+
+      <!-- Lair of Beasts Section -->
+      <tr class="section-header">
+        <td colspan="4">Lair of Beasts</td>
+      </tr>
+      <!-- Hydra -->
+      <tr>
+        <td>Hydra</td>
+        <td>400</td>
+        <td>532</td>
+        <td>
+          Attack: 177.33 XP<br>
+          Strength: 177.33 XP<br>
+          Defence: 177.33 XP
+        </td>
+      </tr>
+      <!-- Manticore -->
+      <tr>
+        <td>Manticore</td>
+        <td>400</td>
+        <td>532</td>
+        <td>
+          Attack: 177.33 XP<br>
+          Strength: 177.33 XP<br>
+          Defence: 177.33 XP
+        </td>
+      </tr>
+      <!-- Minotaur -->
+      <tr>
+        <td>Minotaur</td>
+        <td>400</td>
+        <td>532</td>
+        <td>
+          Attack: 177.33 XP<br>
+          Strength: 177.33 XP<br>
+          Defence: 177.33 XP
+        </td>
+      </tr>
+      <!-- Centaur -->
+      <tr>
+        <td>Centaur</td>
+        <td>400</td>
+        <td>532</td>
+        <td>
+          Attack: 177.33 XP<br>
+          Strength: 177.33 XP<br>
+          Defence: 177.33 XP
+        </td>
+      </tr>
+      <!-- Necromancer -->
+      <tr>
+        <td>Necromancer</td>
+        <td>400</td>
+        <td>532</td>
+        <td>
+          Attack: 177.33 XP<br>
+          Strength: 177.33 XP<br>
+          Defence: 177.33 XP
+        </td>
+      </tr>
+      <!-- Mutated Dragon -->
+      <tr>
+        <td>Mutated Dragon</td>
+        <td>400</td>
+        <td>532</td>
+        <td>
+          Attack: 177.33 XP<br>
+          Strength: 177.33 XP<br>
+          Defence: 177.33 XP
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
