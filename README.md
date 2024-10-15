@@ -1,69 +1,52 @@
 Idle Clans Calculators
 
-Welcome to the Idle Clans Calculators repository! This project provides various skill calculators for the game Idle Clans. These calculators allow players to estimate their progress in multiple skills and optimize their leveling strategy based on various modifiers such as tools, buffs, and personal upgrades.
+Welcome to the Idle Clans Calculators repository! This project provides calculators for Idle Clans, helping players estimate their progress across various skills by factoring in multiple boosts and modifiers.
+Idle Clans Overview
+
+Idle Clans is an idle RPG where players train skills, gather resources, and form clans to overcome challenges. It blends casual and strategic gameplay, allowing progress even while offline.
+Key Features:
+
+    Skill Training: Combat, gathering, and crafting skills.
+    Clan System: Join clans to share resources and gain buffs.
+    PvM Combat: Battle monsters, earn XP, and loot items.
+    Resource Gathering: Collect, trade, and craft valuable materials.
+    Idle Progression: Keep progressing while offline.
+    Modifiers: Tools, buffs, upgrades, and consumables.
+
 Calculators Included
+1. Foraging Calculator
 
-Idle Clans Overview:
+    Calculates required XP and resources to achieve a target foraging level.
+    Includes modifiers like secateurs, clan buffs, and consumables.
 
-Idle Clans is an idle RPG where players train skills, gather resources, and join clans to conquer challenges. The game offers a mix of casual and strategic gameplay, allowing players to progress even when offline.
-Key Features
+2. Mining Calculator
 
-    Skill Training: Master a wide range of skills, including combat (Attack, Defense, Magic) and gathering (Mining, Woodcutting, Fishing).
-    Clan System: Join clans to collaborate on tasks, share resources, and gain buffs through Clan Houses and upgrades.
-    PvM Combat: Battle monsters, gain XP, and loot powerful items.
-    Resource Gathering: Collect and trade materials like ores, logs, and fish to craft valuable items and earn gold.
-    Idle Progression: Set tasks and continue to progress while offline.
-    Modifiers: Boost your gameplay with tools, clan buffs, personal house upgrades, and consumables.
+    Estimates time and resources needed to reach a target mining level.
+    Factors in pickaxes, clan buffs, and mastery capes.
 
-Idle Clans blends engaging resource management with teamwork, making it perfect for players who enjoy strategic idle games.
+3. Woodcutting Calculator
 
-The repository includes the following calculators:
+    Helps estimate the XP required to reach your woodcutting goal.
+    Incorporates tool and buff modifiers for accurate results.
 
-    Foraging Calculator
-    This tool helps players calculate the required experience and resources to achieve a specific foraging level. It includes speed boosts from tools (e.g., Secateurs), clan buffs, personal house buffs, and consumables​
+4. Fishing Calculator
 
+    Calculates XP and time needed to progress in the fishing skill.
+    Supports fishing rod boosts, buffs, and consumables.
 
-Mining Calculator
-Calculate your mining progress and time required to reach your target level. It considers pickaxe boosts, clan buffs, and other modifiers such as consumables and mastery capes​
+5. Agility Calculator
 
+    Computes agility XP based on user inputs.
+    Includes modifiers such as personal buffs, tools, and mastery capes.
 
-Woodcutting Calculator
-Similar to the mining calculator, this tool helps woodcutters estimate the resources and time required to level up. It includes modifiers such as hatchets, buffs, and consumables​
+6. Combat XP Calculator
 
+    Calculates combat experience gained from monsters.
+    Breaks down XP per skill for each encounter.
 
-Fishing Calculator
-Use this calculator to determine the experience needed to level up fishing. It supports speed boosts from fishing rods, clan buffs, and other modifiers​
+How to Use
 
-
-Agility Calculator
-This calculator helps players determine the XP required to reach a specific agility level, factoring in modifiers such as personal buffs and mastery capes​
-
-
-Combat XP Calculator (Monster XP)
-Estimate combat experience gained from fighting various monsters in different environments. The calculator breaks down the XP per skill (Attack, Strength, Defense) and overall XP per encounter​
-
-
-
-How They Work
-
-Each calculator follows a similar structure:
-
-    Player Information
-    Players can either input their current level or use their in-game username to fetch experience details from the Idle Clans API.
-
-    Target Level
-    Input your target level to calculate the required XP and time to achieve that goal.
-
-    Modifiers
-    Select the relevant modifiers (e.g., tools, clan buffs, personal buffs, consumables) to refine the calculations and get a more accurate estimate of time and resources.
-
-    Results
-    The calculators provide details about the total experience required, resources needed, and the estimated time for each task.
-
-Technologies Used
-
-    HTML, CSS (dark theme UI)
-    JavaScript for calculations and interactions
-    PHP integration with Idle Clans API to fetch player data
-    Responsive design for mobile and desktop users
-    Hosted via WordPress for integration with gaming communities
+    Input Player Data: Enter your current level or fetch XP via the Idle Clans API by inputting your username.
+    Set Target Level: Input the level you want to achieve.
+    Apply Modifiers: Select the appropriate tools, buffs, and other modifiers for accurate calculations.
+    View Results: See how much XP, resources, and time you need to reach your goals.
