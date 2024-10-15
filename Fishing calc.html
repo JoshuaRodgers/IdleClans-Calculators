@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fishing Calculator</title>
+    <style>
+        /* Scoped Styling for Fishing Calculator */
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .calculator-container {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 1000px;
+            margin: 50px auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .calculator-container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ffffff;
+            font-size: 36px;
+        }
+
+        .form-section {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            border: 1px solid #444444;
+        }
+
+        .form-section h2 {
+            margin-bottom: 15px;
+            color: #ffffff;
+            font-size: 24px;
+            border-bottom: 2px solid #555555;
+            padding-bottom: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .form-group select,
+        .form-group input[type="text"],
+        .form-group input[type="number"] {
+            width: 100%;
+            padding: 8px 10px;
+            box-sizing: border-box;
+            border: 1px solid #555555;
+            border-radius: 6px;
+            background-color: #2c2c2c;
+            color: #ffffff;
+            font-size: 14px;
+            transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .calculator-container button {
+            padding: 10px 20px;
+            background: #2980b9;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 6px;
+            transition: background 0.3s ease, transform 0.2s;
+            margin: 0 5px;
+        }
+
+        .calculator-container button:hover {
+            background: #1f6391;
+            transform: translateY(-2px);
+        }
+
+        #results {
+            margin-top: 35px;
+            display: none;
+        }
+
+        #results h3 {
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        #results p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #dddddd;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: #2c2c2c;
+        }
+
+        th, td {
+            border: 1px solid #555555;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        th {
+            background-color: #2980b9;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #3a3a3a;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Fishing Calculator</h1>
+
+        <!-- Player Information Section -->
+        <div class="form-section">
+            <h2>Player Information</h2>
+            <div class="form-group">
+                <label for="username">Enter your username (optional)</label>
+                <input type="text" id="username" placeholder="Enter your username" aria-label="Username">
+            </div>
+            <div class="button-group">
+                <button id="lookup-button">Lookup XP</button>
+            </div>
+            <div class="form-group">
+                <label for="current-level">Or, enter your current level</label>
+                <input type="number" id="current-level" placeholder="Enter your current level (1-120)" min="1" max="120" aria-label="Current Level">
+            </div>
+        </div>
+
+        <!-- Target Level Section -->
+        <div class="form-section">
+            <h2>Target Level</h2>
+            <div class="form-group">
+                <label for="target-level">Target Level</label>
+                <input type="number" id="target-level" placeholder="Enter your target level (1-120)" min="1" max="120" aria-label="Target Level">
+            </div>
+        </div>
+
+        <!-- Modifiers Section -->
+        <div class="form-section">
+            <h2>Modifiers</h2>
+
+            <div class="form-group">
+                <label for="fishing-rod">Select Fishing Rod</label>
+                <select id="fishing-rod" aria-label="Fishing Rod Selection">
+                    <option value="0">None</option>
+                    <option value="4">Normal Fishing Rod (4% speed boost)</option>
+                    <option value="6">Refined Fishing Rod (6% speed boost)</option>
+                    <option value="8">Great Fishing Rod (8% speed boost)</option>
+                    <option value="10">Elite Fishing Rod (10% speed boost)</option>
+                    <option value="12">Superior Fishing Rod (12% speed boost)</option>
+                    <option value="15">Outstanding Fishing Rod (15% speed boost)</option>
+                    <option value="20">Godlike Fishing Rod (20% speed boost)</option>
+                    <option value="25">Otherworldly Fishing Rod (25% speed boost)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="clan-buff">Select Clan Buff</label>
+                <select id="clan-buff" aria-label="Clan Buff Selection">
+                    <option value="0">None</option>
+                    <option value="5">Tent (Tier 1) - 5% XP boost</option>
+                    <option value="10">Barn (Tier 2) - 10% XP boost</option>
+                    <option value="15">Windmill (Tier 3) - 15% XP boost</option>
+                    <option value="20">House (Clan) (Tier 4) - 20% XP boost</option>
+                    <option value="25">Manor (Tier 5) - 25% XP boost</option>
+                    <option value="30">Castle (Tier 6) - 30% XP boost</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="personal-house-buff">Select Personal House Buff</label>
+                <select id="personal-house-buff" aria-label="Personal House Buff Selection">
+                    <option value="0">None</option>
+                    <option value="5">Cardboard Box (Tier 1) - 5% XP boost</option>
+                    <option value="10">Tent (Tier 2) - 10% XP boost</option>
+                    <option value="15">Van Down by the River (Tier 3) - 15% XP boost</option>
+                    <option value="20">Small Cabin (Tier 4) - 20% XP boost</option>
+                    <option value="25">House (Tier 5) - 25% XP boost</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Consumables</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="fish-oil"> Fish Oil (+5% XP boost)</label>
+                    <label><input type="checkbox" id="better-fisherman"> Better Fisherman Upgrade (+25% XP boost)</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mastery-cape">Select Mastery Cape</label>
+                <select id="mastery-cape" aria-label="Mastery Cape Selection">
+                    <option value="0">None</option>
+                    <option value="5">Fishing Cape (Tier 1) - 5% speed boost</option>
+                    <option value="10">Fishing Cape (Tier 2) - 10% speed boost</option>
+                    <option value="15">Fishing Cape (Tier 3) - 15% speed boost</option>
+                    <option value="20">Fishing Cape (Tier 4) - 20% speed boost</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="button-group">
+            <button id="calculate-button">Calculate</button>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results">
+            <h3>Results</h3>
+            <p><strong>XP Required:</strong> <span id="xp-required"></span></p>
+            <table id="materials-table">
+                <thead>
+                    <tr>
+                        <th>Level Requirement</th>
+                        <th>Fish</th>
+                        <th>XP Per Fish</th>
+                        <th>Fish Needed</th>
+                        <th>Time Per Fish (seconds)</th>
+                        <th>Total Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gameApiUrl = 'https://query.idleclans.com/api/Player/profile/';
+            const xpTable = {1:0,2:75,3:151,4:227,5:303,6:380,7:531,8:683,9:836,10:988,11:1141,12:1294,13:1447,14:1751,15:2054,16:2358,17:2663,18:2967,19:3272,20:3577,21:4182,22:4788,23:5393,24:5999,25:6606,26:7212,27:7819,28:9026,29:10233,30:11441,31:12648,32:13856,33:15065,34:16273,35:18682,36:21091,37:23500,38:25910,39:28319,40:30729,41:33140,42:37950,43:42761,44:47572,45:52383,46:57195,47:62006,48:66818,49:76431,50:86043,51:95656,52:105269,53:114882,54:124496,55:134109,56:153323,57:172538,58:191752,59:210967,60:230182,61:249397,62:268613,63:307028,64:345444,65:383861,66:422277,67:460694,68:499111,69:537528,70:614346,71:691163,72:767981,73:844800,74:921618,75:998437,76:1075256,77:1228875,78:1382495,79:1536114,80:1689734,81:1843355,82:1996975,83:2150596,84:2457817,85:2765038,86:3072260,87:3379481,88:3686703,89:3993926,90:4301148,91:4915571,92:5529994,93:6144417,94:6758841,95:7373264,96:7987688,97:8602113,98:9830937,99:11059762,100:12288587,101:13517412,102:14746238,103:15975063,104:17203889,105:19661516,106:22119142,107:24576769,108:27034396,109:29492023,110:31949651,111:34407278,112:39322506,113:44237735,114:49152963,115:54068192,116:58983421,117:63898650,118:68813880,119:78644309,120:88474739};
+
+    // Fishing data (add the relevant fish data here)
+    const fishingData = [
+        { name: "Shrimp", xp: 10, level: 1, time: 5 },
+        { name: "Salmon", xp: 50, level: 20, time: 7 },
+        { name: "Tuna", xp: 80, level: 35, time: 10 },
+        { name: "Lobster", xp: 120, level: 50, time: 12 },
+        { name: "Swordfish", xp: 200, level: 60, time: 15 },
+        { name: "Shark", xp: 250, level: 76, time: 20 }
+    ];
+
+    const getXPForLevel = (level) => {
+        return xpTable[level] || 0;
+    };
+
+    const calculateResults = (currentLevel, targetLevel, modifiers) => {
+        const currentXP = getXPForLevel(currentLevel);
+        const targetXP = getXPForLevel(targetLevel);
+        const xpRequired = targetXP - currentXP;
+
+        let totalXPBoost = 1 + (modifiers.xpBoost / 100);
+        let totalSpeedBoost = 1 - (modifiers.speedBoost / 100);
+
+        let results = [];
+
+        fishingData.forEach(fish => {
+            if (fish.level <= currentLevel) {
+                const adjustedXPPerCatch = fish.xp * totalXPBoost;
+                const adjustedTimePerCatch = fish.time * totalSpeedBoost;
+                const fishNeeded = Math.ceil(xpRequired / adjustedXPPerCatch);
+                const totalTime = fishNeeded * adjustedTimePerCatch;
+
+                results.push({
+                    name: fish.name,
+                    level: fish.level,
+                    xpPerFish: adjustedXPPerCatch.toFixed(2),
+                    fishNeeded: fishNeeded,
+                    timePerFish: adjustedTimePerCatch.toFixed(2),
+                    totalTime: totalTime.toFixed(2)
+                });
+            }
+        });
+
+        return results;
+    };
+
+    document.getElementById('calculate-button').addEventListener('click', () => {
+        const currentLevel = parseInt(document.getElementById('current-level').value, 10);
+        const targetLevel = parseInt(document.getElementById('target-level').value, 10);
+
+        const fishingRodBoost = parseFloat(document.getElementById('fishing-rod').value);
+        const clanBuffBoost = parseFloat(document.getElementById('clan-buff').value);
+        const personalHouseBuffBoost = parseFloat(document.getElementById('personal-house-buff').value);
+        const consumablesBoost = document.getElementById('fish-oil').checked ? 5 : 0;
+        const betterFishermanBoost = document.getElementById('better-fisherman').checked ? 25 : 0;
+
+        const masteryCapeBoost = parseFloat(document.getElementById('mastery-cape').value);
+
+        const modifiers = {
+            xpBoost: clanBuffBoost + personalHouseBuffBoost + consumablesBoost + betterFishermanBoost,
+            speedBoost: fishingRodBoost + masteryCapeBoost
+        };
+
+        const results = calculateResults(currentLevel, targetLevel, modifiers);
+
+        // Display results (you would update your HTML here with the `results`)
+        console.log(results);
+    });
+});
